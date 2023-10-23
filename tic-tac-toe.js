@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var array = [0, 1, 2, 3, 4, 5, 6, 7, 8];
     var won = false;
     var status = document.getElementById("status");
+    var newGameBtn = document.querySelector(".btn");
 
     squares.forEach(function(element, i) {
         element.classList.add("square");
@@ -43,6 +44,21 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
             }
         });
+    });
+
+    newGameBtn.addEventListener("click", function() {
+        squares.forEach(function(square) {
+            square.textContent = "";
+            square.classList.remove("X", "O");
+        });
+
+        count = 1;
+        array = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+        won = false;
+        status.textContent = "Move your mouse over a square and click to play an X or an O."
+        status.classList.remove("you-won");
+        
+        //a function to update the status would be useful here 
     });
 });
 
