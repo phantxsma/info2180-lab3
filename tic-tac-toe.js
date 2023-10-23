@@ -7,7 +7,16 @@ document.addEventListener("DOMContentLoaded", function() {
     squares.forEach(function(element, i) {
         element.classList.add("square");
 
+        element.addEventListener("mouseover", function() {
+            element.classList.add("hover");
+        });
+
+        element.addEventListener("mouseout", function() {
+            element.classList.remove("hover");
+        });
+
         element.addEventListener("click", function() {
+
             if (!element.textContent) {
                 if (count % 2 === 1) {
                     element.textContent = "X";
